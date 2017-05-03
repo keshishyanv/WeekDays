@@ -15,6 +15,8 @@ import com.havayi.weekdays.models.DayAdapter;
 
 public class RecViewFragment extends Fragment {
 
+    private static final String DAYS_TAG = "days";
+
     private DayAdapter dayAdapter;
     private Day[] mDays;
 
@@ -33,6 +35,8 @@ public class RecViewFragment extends Fragment {
         rv.setLayoutManager(llm);
         rv.setHasFixedSize(true);
         dayAdapter = new DayAdapter();
+        if (savedInstanceState != null)
+            mDays = (Day[]) savedInstanceState.getParcelableArray(DAYS_TAG);
         dayAdapter.setDays(mDays);
         rv.setAdapter(dayAdapter);
         return rootView;
@@ -42,4 +46,9 @@ public class RecViewFragment extends Fragment {
         mDays = days;
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelableArray(DAYS_TAG, mDays);
+    }
 }

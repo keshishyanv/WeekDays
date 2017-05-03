@@ -45,7 +45,7 @@ public class PagerFragment extends Fragment {
         }
 
         mPager = (ViewPager) rootView.findViewById(R.id.pager);
-        mPagerAdapter = new DayPagerAdapter(getFragmentManager());
+        mPagerAdapter = new DayPagerAdapter(getChildFragmentManager());
         mPager.setPageTransformer(true, new DayPagerTransformer());
         mPager.setAdapter(mPagerAdapter);
         mPager.setCurrentItem(currentPosition, true);
