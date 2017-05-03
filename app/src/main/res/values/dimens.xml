@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_small">5dp</dimen>
+    <dimen name="margin_small">5dp</dimen>
+    <dimen name="margin_medium">20dp</dimen>
+    <dimen name="size_radio_text">22sp</dimen>
+</resources>
